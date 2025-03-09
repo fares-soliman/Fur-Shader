@@ -9,7 +9,8 @@
 #include "FurTexture.h"
 #include "ModelLoader.h"
 
-#define SCORPION 1
+#define SCORPION 0
+#define PI 3.14159
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -499,12 +500,12 @@ void FurSimApp::LoadTextures()
 		L"Textures/tile.dds",
 		L"Textures/grasscube1024.dds",
 #if SCORPION
-		L"Textures/scorp-02.dds",
+		L"Textures/scorp.dds",
 		L"Textures/scorpFurStencil.dds",
 
 #else
 		L"Textures/yeti1.dds",
-		L"Textures/yeti_stencil4.dds",
+		L"Textures/yeti_stencil.dds",
 #endif
 		L"Textures/furTex.dds"
 	};
@@ -914,7 +915,7 @@ void FurSimApp::BuildMaterials()
 	scorpion->DiffuseSrvHeapIndex = 2;
 	scorpion->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	scorpion->FresnelR0 = XMFLOAT3(0.1f, 0.1f, 0.1f);
-	scorpion->Roughness = 0.3f;
+	scorpion->Roughness = 0.9f;
 
 	auto scorpFur = std::make_unique<Material>();
 	scorpFur->Name = "scorpFur";
@@ -970,7 +971,11 @@ void FurSimApp::BuildRenderItems()
 	mAllRitems.push_back(std::move(gridRitem));
 
 	auto scorpRitem = std::make_unique<RenderItem>();
+#if SCORPION
 	XMStoreFloat4x4(&scorpRitem->World, XMMatrixTranslation(0.0f, 1.3f, -5.0f));
+#else
+	XMStoreFloat4x4(&scorpRitem->World, XMMatrixTranslation(0.0f, 1.3f, 5.0f) * XMMatrixRotationY(PI));
+#endif
 	scorpRitem->TexTransform = MathHelper::Identity4x4();
 	scorpRitem->ObjCBIndex = 2;
 	scorpRitem->Mat = mMaterials["scorp"].get();
