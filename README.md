@@ -1,6 +1,6 @@
 # Fur Shader
 
-Fur Shader compatible with skinned and rigged FBX models. Made in Directx12 using the tried-and-true shells method
+Fur Shader compatible with skinned and rigged FBX models. Made in DirectX 12 using the tried-and-true shells method
 
 https://github.com/user-attachments/assets/9206d215-9de6-487f-a66d-ce5cc733656a
 
