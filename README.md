@@ -1,10 +1,14 @@
 # Fur Shader
 
-Fur Shader made in Directx12 using the tried-and-true shells method
+Fur Shader compatible with skinned and rigged FBX models. Made in Directx12 using the tried-and-true shells method
 
-https://github.com/user-attachments/assets/34888731-e328-451d-9a66-33cac468ad8b
+https://github.com/user-attachments/assets/9206d215-9de6-487f-a66d-ce5cc733656a
 
-https://github.com/user-attachments/assets/a08abcf7-156e-413b-9fca-63dcc2349335
-
+https://github.com/user-attachments/assets/8d41c45e-d0d2-459d-a1f8-52a36556a70e
 
 ## Fur Generation Visualization
+
+https://github.com/user-attachments/assets/4a9b7d90-cdc7-442a-98f9-bc7a15ac4563
+
+
+
